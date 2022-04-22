@@ -1,0 +1,1 @@
+To run the app use 'npm install' and 'npm start'

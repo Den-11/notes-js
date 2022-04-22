@@ -1,0 +1,19 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "parcel index.html -p 3000",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Den-11/notes-js.git"
+  },
+  "dependencies": {
+    "parcel": "^2.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.13.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}

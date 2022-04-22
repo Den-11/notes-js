@@ -1,0 +1,14 @@
+.icon-edit:hover{
+    cursor: pointer;
+    color: #858fff;
+}
+
+.icon-archive:hover{
+    cursor: pointer;
+    color: #ffd266;
+}
+
+.icon-delete:hover{
+    cursor: pointer;
+    color: #ff8383;
+}
