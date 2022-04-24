@@ -1,3 +1,4 @@
+// index.js
 import {showActiveNotes} from './logic/filter';
 import {tableContent} from './constants';
 import {setNotes} from './logic/helper';
