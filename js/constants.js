@@ -1,8 +1,19 @@
+export const mainTableId = 'main-table-container';
+export const headerId = 'nav-container';
+export const addFormId = 'add-note-form';
+export const addContainerId = 'add-note-container';
+
 export const awesomeIcons = {
   archive: ['fas', 'fa-file-archive'],
   cart: ['fas', 'fa-shopping-cart'],
   trash: ['fas', 'fa-trash'],
   pen: ['fas', 'fa-pen'],
+};
+
+export const categories = {
+  'Task': awesomeIcons.cart,
+  'Idea': awesomeIcons.pen,
+  'Random Thought': awesomeIcons.trash,
 };
 
 export const tableHeaders = [
@@ -37,7 +48,7 @@ export const tableContent = [
       created: 'Created',
       category: 'Category',
       content: 'Content',
-      Dates: '&nbsp;',
+      dates: '&nbsp;',
     },
   },
 ];

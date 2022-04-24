@@ -1,14 +1,32 @@
-.icon-edit:hover{
+tr:hover td {
+    background-color: #ececec;
+    transition: all 0.3s ease;
+}
+
+thead {
+    font-weight: bold;
+}
+
+.icon-hover{
     cursor: pointer;
+}
+
+.icon-edit:hover{
     color: #858fff;
 }
 
 .icon-archive:hover{
-    cursor: pointer;
     color: #ffd266;
 }
 
+.icon-unarchive{
+    color: #ffd266;
+}
+
+.icon-unarchive:hover{
+    color: #737373;
+}
+
 .icon-delete:hover{
-    cursor: pointer;
     color: #ff8383;
 }

@@ -1,9 +1,21 @@
-import {showActiveNotes} from './switch';
+import {showActiveNotes} from './logic/filter';
 import {tableContent} from './constants';
+import {setNotes} from './logic/helper';
+import {addNote} from './logic/processing';
 
 if (!localStorage.getItem('all-notes')) {
-  localStorage.setItem('all-notes', JSON.stringify(tableContent));
+  setNotes(tableContent);
 }
 
-showActiveNotes();
+try {
+  showActiveNotes();
+} catch (e) {
+  console.log('Error occurred. Returning default values');
+  setNotes(tableContent);
+  showActiveNotes();
+}
 
+const addButton = document.querySelector('#add-button');
+addButton.addEventListener('click', () => {
+  addNote();
+});
