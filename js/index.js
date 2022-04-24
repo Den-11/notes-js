@@ -3,6 +3,7 @@ import {tableContent} from './constants';
 import {setNotes} from './logic/helper';
 import {addNote} from './logic/processing';
 
+
 if (!localStorage.getItem('all-notes')) {
   setNotes(tableContent);
 }

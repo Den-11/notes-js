@@ -1,18 +1,22 @@
-import {deleteNewForm, renderNewForm} from '../rendering/render';
-import {addContainerId, addFormId} from '../constants';
+/* functions used in event listeners */
+import {addContainerId, addFormId, editingContainerId} from '../constants';
 import {updateNotes} from './filter';
 import {
-  getParsedId, getParsedNotes, setNotes, pushNewNote, completeNote,
+  deleteNewForm, renderNewForm, renderEditForm,
+} from '../rendering/render';
+import {
+  getParsedId, getParsedNotes, getValues, setNotes,
+  completeNote, pushEditedNote, pushNewNote,
 } from './helper';
+
 
 export const addNote = () => {
   const form = document.querySelector(`#${addFormId}`);
-  const container = document.querySelector(`#${addContainerId}`);
 
   if (form) {
     const note = completeNote(form);
     pushNewNote(note);
-    deleteNewForm(container);
+    deleteNewForm(addFormId);
     updateNotes();
   } else {
     renderNewForm(addFormId, addContainerId);
@@ -20,11 +24,27 @@ export const addNote = () => {
 };
 
 export const discardAdding = () => {
-  const container = document.querySelector(`#${addContainerId}`);
-  deleteNewForm(container);
+  deleteNewForm(addFormId);
 };
 
 export const editNote = (id) => {
+  const parsedId = getParsedId(id);
+  const container = document.querySelector(`#${editingContainerId}`);
+  if (container) {
+    updateNotes();
+  }
+  const values = getValues(parsedId);
+  renderEditForm(parsedId, values);
+};
+
+export const saveEditing = (id) => {
+  const container = document.querySelector(`#${editingContainerId}`);
+  pushEditedNote(container, id);
+  updateNotes();
+};
+
+export const discardEditing = () => {
+  updateNotes();
 };
 
 export const archiveNote = (id) => {
